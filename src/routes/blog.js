@@ -1,4 +1,4 @@
-const { Router, Router } = require('express');
+const { Router } = require('express');
 const router = Router();
 
 const mysqlConnection = require('../database/database');
@@ -65,6 +65,8 @@ router.delete('/:posts/:id', (req,res) => {
         }
     });
 });
+
+module.exports = router;
 
 
 
