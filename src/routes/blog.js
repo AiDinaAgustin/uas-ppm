@@ -54,6 +54,18 @@ router.put('/:posts/:id', (req,res) => {
     });
 });
 
+//delete
+router.delete('/:posts/:id', (req,res) => {
+    const {id} = req.params;
+    mysqlConnection.query('delete from post where id= ?;', [id], (error, rows, fields) => {
+        if (!error) {
+            res.json({Status: 'Post Deleted'});
+        } else {
+            res.json({Status: error});
+        }
+    });
+});
+
 
 
 
